@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/CarlosGMI/YouTubePlaylistSongsScript#readme",
   "dependencies": {
-    "axios": "^0.21.1",
     "dotenv": "^10.0.0",
     "googleapis": "^76.0.0"
   },
