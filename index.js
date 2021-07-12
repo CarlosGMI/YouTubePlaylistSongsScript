@@ -1,5 +1,4 @@
 const { open, appendFile } = require('fs/promises');
-const { close } = require('fs');
 const { google } = require('googleapis');
 
 require('dotenv').config();
@@ -25,7 +24,7 @@ async function fetchPlaylists() {
 			const playlistItems = await fetchPlaylistItems(playlistId, playlistNextPage);
 			playlistNextPage = playlistItems.data.nextPageToken;
 
-			findNamesInResults(playlistItems.data.items, playlistName);
+			await findNamesInResults(playlistItems.data.items, playlistName);
 
 			if (!playlistNextPage) {
 				await file.close();
